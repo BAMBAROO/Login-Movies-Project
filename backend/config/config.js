@@ -4,7 +4,7 @@ const pool = new pg.Pool({
   user: "postgres",
   host: "localhost",
   database: "login",
-  password: "Anak123",
+  password: "root",
   max: 10,
   min: 5,
   idleTimeoutMillis: 30000,
