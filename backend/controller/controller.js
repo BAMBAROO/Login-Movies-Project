@@ -4,7 +4,6 @@ import pool from "../config/config.js";
 
 export const getMovie = async (req, res) => {
   const { movie } = req.body;
-  console.log(movie);
   try {
     const response = await fetch(
       `http://www.omdbapi.com/?apikey=9c7663ba&s=${movie}`
@@ -33,7 +32,6 @@ export const getMovie = async (req, res) => {
 export const register = async (req, res) => {
   const client = await pool.connect();
   const { username, email, password, confirmPassword } = req.body;
-  console.log({ username, email, password, confirmPassword });
   if (password !== confirmPassword) {
     return res.status(400).json({ message: "password are doesn't match" });
   }
